@@ -1,0 +1,7 @@
+{
+    "students": [
+        {"name": "John Doe", "age": 22, "major": "Computer Science"},
+        {"name": "Jane Smith", "age": 20, "major": "Mathematics"},
+        {"name": "Mike Brown", "age": 21, "major": "Physics"}
+    ]
+}
