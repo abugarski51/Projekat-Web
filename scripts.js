@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // AJAX for JSON
+    // AJAX za JSON
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
