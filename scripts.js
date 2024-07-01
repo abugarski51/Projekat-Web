@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (!passwordPattern.test(password)) {
             valid = false;
-            errors.push('Šifra mora da sadrži barem jedno slovo i jedan broj.');
+            errors.push('Šifra mora da sadrži barem jedno slovo i jedan broj i da ima barem 6 karaktera.');
         }
 
         if (valid) {
