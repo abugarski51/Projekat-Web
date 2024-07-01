@@ -1,25 +1,3 @@
-
-
-    // Fade In Main Content
-    $("main").hide().fadeIn(500);
-
-$(document).ready(function(){
-    // Navigacija obojena
-    $("nav a").each(function() {
-        if (this.href === window.location.href) {
-            $(this).addClass("active");
-        }
-    });
-
-    // Hover za tabelu
-    $("#studentTable tbody tr").hover(
-        function() {
-            $(this).css("background-color", "#e0e0e0");
-        }, function() {
-            $(this).css("background-color", "");
-        }
-    );
-});
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('myForm').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -33,12 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const dob = document.getElementById('dob').value;
         const password = document.getElementById('password').value;
 
+        const namePattern = /^[A-Z][a-zA-Z]*$/;
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const phonePattern = /^[0-9]{10}$/;
+        const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
         let valid = true;
         let errors = [];
 
+        if (!namePattern.test(name)) {
+            valid = false;
+            errors.push('Ime mora da počinje velikim slovom i da sadrži samo slova.');
+        }
         if (!emailPattern.test(email)) {
             valid = false;
             errors.push('Nevalidna Email forma.');
@@ -46,6 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!phonePattern.test(phone)) {
             valid = false;
             errors.push('Telefon mora da ima barem 10 cifara.');
+        }
+        if (!passwordPattern.test(password)) {
+            valid = false;
+            errors.push('Šifra mora da sadrži barem jedno slovo i jedan broj.');
         }
 
         if (valid) {
@@ -64,12 +52,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-//ajax za Json
+    // AJAX for JSON
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var myObj = JSON.parse(this.responseText);
-            var jsonDataHTML = '<h2>Informacije is Json fajla o studentima:</h2>';
+            var jsonDataHTML = '<h2>Informacije iz JSON fajla o studentima:</h2>';
             jsonDataHTML += '<ul>';
             myObj.students.forEach(function(student) {
                 jsonDataHTML += '<li>' + student.name + ', ' + student.age + ' godina, Studije: ' + student.major + '</li>';
