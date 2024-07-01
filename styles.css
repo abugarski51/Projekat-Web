@@ -117,3 +117,29 @@ button[type="submit"]:active {
         padding: 10px;
     }
 }
+/* Active navigation link styling */
+nav ul li a.active {
+    font-weight: bold;
+    color: #4CAF50; /* or any color of your choice */
+}
+/* Table styles */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}

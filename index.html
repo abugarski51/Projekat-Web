@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+        }
+        .left, .right {
+            display: inline-block;
+            max-width: 40%;
+            word-wrap: break-word;
+        }
+        .highlight {
+            background-color: blue;
+            color: white; /* Ensures text is readable against the blue background */
+            padding: 2px 5px; /* Adds some padding around the text */
+            display: inline-block;
+            border-radius: 5px; /* Adds slightly curved edges */
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="form.html">Form</a></li>
+                <li><a href="index.html">Pocetna</a></li>
+                <li><a href="about.html">O nama</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="form.html">Forma</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1 class="center">Welcome to Our Website</h1>
-        <p class="center">We specialize in creating professional and custom web solutions for businesses of all sizes.</p>
-        <p class="center">Our services include web design, development, SEO optimization, and more. We aim to deliver high-quality websites that help your business grow and succeed online.</p>
+        <h1 class="center">Dobrosli na moj Website!</h1>
+        <p class="center">Ovaj website sam napravio sam pomocu elemenata HTML, CSS kao i upotrebu JavaScript-a.</p>
+        <p class="center">Ovo je završni projekat iz predmeta "internet i veb dizajn" za 2024 godinu i nosi 15 poena.</p>
+        <p class="center"><b>Navescemo osnovne definicije HTML i CSS:</b></p>
+        <br>
+        <div class="container">
+            <p class="left"><span class="highlight">HTML, skraćenica od HyperText Markup Language, je standarizovani jezik koji se koristi pri strukturiranju tekstova, medija i ugrađenih objekata u web stranice i elektronsku poštu. Kao modifikovanu i pojednostavljenu verziju SGML jezika, HTML standarizuje i održava World Wide Web Consortium (W3C).
+
+                Ova web stranica, kao i mnoge druge, su potpuno ili djelomično označene HTML jezikom. Iako se HTML znakovi (tags) često nazivaju kodom, tehnički HTML nije kod jer kompjuterski kod su instrukcije koje od računara traže da izvrši određenu operaciju. Svrha HTML znakova je da se se struktura dokumenta "označi" tako da bi korisnikov agent (user agent), tj. internet pretraživač mogao da prepozna strukturu dokumenta i ispravno je prikaže u prozoru internet pretraživača kojeg korisnik koristi.</span></p>
+            <p class="right"><span class="highlight">CSS (engl. Cascading Style Sheets) je jezik formatiranja pomoću kog se definiše izgled elemenata veb-stranice. Prvobitno, HTML je služio da definiše kompletan izgled, strukturu i sadržaj veb-stranice, ali je od verzije 4.0 HTML-a uveden CSS koji bi definisao konkretan izgled, dok je HTML ostao u funkciji definisanja strukture i sadržaja.</span></p>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2024 Your Website</p>
+        <p>&copy; Projekat internet i Veb 2024</p>
     </footer>
     <script src="scripts.js"></script>
 </body>

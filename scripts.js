@@ -1,3 +1,33 @@
+$(document).ready(function(){
+    // Highlight Active Navigation Link
+    $("nav a").each(function() {
+        if (this.href === window.location.href) {
+            $(this).addClass("active");
+        }
+    });
+
+    // Fade In Main Content
+    $("main").hide().fadeIn(500);
+});
+
+$(document).ready(function(){
+    // Highlight Active Navigation Link
+    $("nav a").each(function() {
+        if (this.href === window.location.href) {
+            $(this).addClass("active");
+        }
+    });
+
+    // Table row hover effect
+    $("#studentTable tbody tr").hover(
+        function() {
+            $(this).css("background-color", "#e0e0e0");
+        }, function() {
+            $(this).css("background-color", "");
+        }
+    );
+});
+// Existing scripts
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('myForm').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -42,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // AJAX za učitavanje JSON podataka
+    // AJAX for loading JSON data
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
