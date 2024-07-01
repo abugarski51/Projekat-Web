@@ -1,3 +1,25 @@
+
+
+    // Fade In Main Content
+    $("main").hide().fadeIn(500);
+
+$(document).ready(function(){
+    // Navigacija obojena
+    $("nav a").each(function() {
+        if (this.href === window.location.href) {
+            $(this).addClass("active");
+        }
+    });
+
+    // Hover za tabelu
+    $("#studentTable tbody tr").hover(
+        function() {
+            $(this).css("background-color", "#e0e0e0");
+        }, function() {
+            $(this).css("background-color", "");
+        }
+    );
+});
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('myForm').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -71,3 +93,4 @@ document.addEventListener('DOMContentLoaded', function() {
     xmlhttp.open("GET", "data.json", true);
     xmlhttp.send();
 });
+
