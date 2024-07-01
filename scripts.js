@@ -1,24 +1,17 @@
-$(document).ready(function(){
-    // Highlight Active Navigation Link
-    $("nav a").each(function() {
-        if (this.href === window.location.href) {
-            $(this).addClass("active");
-        }
-    });
+
 
     // Fade In Main Content
     $("main").hide().fadeIn(500);
-});
 
 $(document).ready(function(){
-    // Highlight Active Navigation Link
+    // Navigacija obojena
     $("nav a").each(function() {
         if (this.href === window.location.href) {
             $(this).addClass("active");
         }
     });
 
-    // Table row hover effect
+    // Hover za tabelu
     $("#studentTable tbody tr").hover(
         function() {
             $(this).css("background-color", "#e0e0e0");
@@ -27,7 +20,6 @@ $(document).ready(function(){
         }
     );
 });
-// Existing scripts
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('myForm').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -49,11 +41,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!emailPattern.test(email)) {
             valid = false;
-            errors.push('Invalid email format.');
+            errors.push('Nevalidna Email forma.');
         }
         if (!phonePattern.test(phone)) {
             valid = false;
-            errors.push('Invalid phone format. It should be 10 digits.');
+            errors.push('Telefon mora da ima barem 10 cifara.');
         }
 
         if (valid) {
@@ -65,27 +57,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 password: password
             };
             const jsonString = JSON.stringify(formData, null, 2);
-            const trimmedJsonString = jsonString.substring(1, jsonString.length - 1); // Remove the curly braces
+            const trimmedJsonString = jsonString.substring(1, jsonString.length - 1);
             document.getElementById('formOutput').innerText = trimmedJsonString;
         } else {
             document.getElementById('formOutput').innerText = errors.join('\n');
         }
     }
 
-    // AJAX for loading JSON data
+//ajax za Json
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var myObj = JSON.parse(this.responseText);
-            var jsonDataHTML = '<h2>Student Information</h2>';
+            var jsonDataHTML = '<h2>Informacije is Json fajla o studentima:</h2>';
             jsonDataHTML += '<ul>';
             myObj.students.forEach(function(student) {
-                jsonDataHTML += '<li>' + student.name + ', ' + student.age + ' years old, Major: ' + student.major + '</li>';
+                jsonDataHTML += '<li>' + student.name + ', ' + student.age + ' godina, Studije: ' + student.major + '</li>';
             });
             jsonDataHTML += '</ul>';
             document.getElementById('jsonData').innerHTML = jsonDataHTML;
         } else if (this.readyState == 4 && this.status != 200) {
-            document.getElementById('jsonData').innerHTML = 'Error loading data.';
+            document.getElementById('jsonData').innerHTML = 'Error.';
         }
     };
     xmlhttp.open("GET", "data.json", true);
